@@ -10,9 +10,10 @@ module.exports = function (app, express) {
   app.get('/api/users/signedin', userController.checkAuth);
 
   // authentication middleware used to decode token and made available on the request
-  // app.use('/api/links', helpers.decode);
+  app.use('/api/links', helpers.decode);
   app.get('/api/links/', linksController.allLinks);
   app.post('/api/links/', linksController.newLink);
+
 
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler

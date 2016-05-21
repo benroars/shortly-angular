@@ -27,9 +27,6 @@ angular.module('shortly', [
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
-    .when('/logout', {
-      redirectTo: '/app/auth/signin.html'
-    })
     // .otherwise({
     //   //  redirectTo: '/signin'
     //   console.log('asuhdude')

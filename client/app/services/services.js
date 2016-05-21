@@ -8,15 +8,17 @@ angular.module('shortly.services', [])
       url: '/api/links'
     }).then(function(resp) {
       //console.log('THE RESP', resp);
+      console.log('GETALLCALLED', resp.data);
       return resp.data;
     });
   };
 
   var addOne = function(link) {
+    //console.log('THE LINK', link);
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: link 
+      data: link
     });
     // .then(function(resp) {
     //   console.log('post response', resp);
@@ -46,6 +48,7 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+     // console.log('the token', resp.data.token);
       return resp.data.token;
     });
   };

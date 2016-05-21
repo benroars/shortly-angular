@@ -5,10 +5,14 @@ angular.module('shortly.shorten', [])
 
   $scope.link = {};
 
+  $scope.link.urls = [];
+
   $scope.addLink = function(link) {
     Links.addOne(link)
       .then(function(resp) {
         return resp.status;
       });
   };
+
+
 });
