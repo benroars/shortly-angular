@@ -8,7 +8,7 @@
 
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
-  <div class='link' ng-repeat="link in data.links">
+  <div class='link' ng-repeat="link in data.links | orderBy: '-visits'">
 	  <img src='../../assets/redirect_icon.png'/>
 	  <div class='info'>
 	    <div class="visits"><span class="count">{{link.visits}}</span>Visits</div>

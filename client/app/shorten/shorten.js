@@ -17,12 +17,12 @@ angular.module('shortly.shorten', [])
   };
 
   $scope.validate = function(url) {
-  	console.log(url);
-  	if(url.match(rValidUrl)){
-  		return 'VALID URL'
-  	} else {
-  		return 'NOT A VALID URL'
-  	}
-  }
+    console.log(url);
+    if(url.match(rValidUrl)){
+      return 'VALID URL';
+    } else {
+      return 'NOT A VALID URL';
+    }
+  };
 
 });
