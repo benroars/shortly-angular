@@ -8,7 +8,10 @@
 
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
-  <div class='link' ng-repeat="link in data.links | orderBy: '-visits'">
+  <div class="bar">
+      <input type="text" class="search" ng-model="searchString" placeholder="Enter your search terms" />
+  </div>
+  <div class='link' ng-repeat="link in data.links | searchFor:searchString | orderBy: '-visits'">
 	  <img src='../../assets/redirect_icon.png'/>
 	  <div class='info'>
 	    <div class="visits"><span class="count">{{link.visits}}</span>Visits</div>

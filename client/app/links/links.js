@@ -1,4 +1,4 @@
-angular.module('shortly.links', [])
+var y = angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, $location, Links) {
 
@@ -24,4 +24,20 @@ angular.module('shortly.links', [])
 
   $scope.getAll();
 
+});
+
+y.filter('searchFor', function(){
+    return function(arr, searchString){
+        if(!searchString){
+            return arr;
+        }
+        var result = [];
+        searchString = searchString.toLowerCase();
+        angular.forEach(arr, function(item){
+            if(item.title.toLowerCase().indexOf(searchString) !== -1){
+            result.push(item);
+        }
+        });
+        return result;
+    };
 });
