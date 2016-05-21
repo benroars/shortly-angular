@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, $location, Links, Auth) {
+.controller('LinksController', function ($scope, $location, Links) {
 
   $scope.data = {};
 
@@ -14,7 +14,6 @@ angular.module('shortly.links', [])
   };
 
   $scope.addOne = function(link) {
-    //link = JSON.stringify({url: link});
     Links.addOne(link)
     .then(function(resp) {
       return resp.status;
@@ -23,12 +22,6 @@ angular.module('shortly.links', [])
     });
   };
 
-  console.log('THE AUTH', Auth.isAuth(), Auth);
-   if(Auth.isAuth()) {
-     $scope.getAll();
-   } else {
-     $location.path('/signin');
-   }
-
+  $scope.getAll();
 
 });

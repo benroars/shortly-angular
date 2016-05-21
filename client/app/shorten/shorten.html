@@ -3,7 +3,7 @@
   <ul>
     <li><a href='#/links' class='index'>All Links</a></li>
     <li><a href='#/shorten' class='create'>Shorten</a></li>
-    <li><a href='#/signin' class='logout'>Logout</a></li>
+    <li><a href='#/signout' class='logout'>Logout</a></li>
   </ul>
 </div>
 
@@ -11,9 +11,10 @@
 	<form ng-controller="ShortenController" ng-submit='addLink(url)'>
       <input class='text' type='text' name='url' ng-model='url'>
       <input type='submit' value='Shorten'>
+      <div class='message'>{{url}}</div>
   	</form>
   	<img class='spinner' src='../../assets/spiffygif_46x46.gif'>
-  	<div class='message'></div>
+  	
   <!--img src='/redirect_icon.png'/-->
   <!--div class='info' ng-repeat="link in $scope">
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
